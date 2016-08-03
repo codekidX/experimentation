@@ -21,6 +21,7 @@ public class SocketServer {
 
 	public static void main(String[] args) throws IOException {
 		
+		// TODO make use of this IP address to create socket in computer IP
 		Scanner scanner = new Scanner("Enter local IP (if u don't enter anything localhost will be used)");
 		
 		localIP = scanner.nextLine();
@@ -29,16 +30,19 @@ public class SocketServer {
 			serverPort = scanner.nextInt();
 		}
 		if(serverPort !=0 && serverPort < 10000) {
-			
+			// instantiate server on port
 				serverSocket = new ServerSocket(serverPort);
 		}
 		
 		while(serverSwitch) {
 			
+			    // accept socket data from client
 				socketFromServer = serverSocket.accept();
 			
+				// get pipe stream from socket
 				InputStream in = socketFromServer.getInputStream();
 				InputStreamReader inR = new InputStreamReader(in);
+				// buffered reader to read socket pipe buffer (requires reader)
 				buff = new BufferedReader(inR);
 			
 				DataOutputStream dos = new DataOutputStream(socketFromServer.getOutputStream());
