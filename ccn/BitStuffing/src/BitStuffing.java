@@ -39,6 +39,9 @@ public class BitStuffing {
 		System.out.println("Enter the data sequence : ");
 		data = scanner.nextLine();
 		
+		// no more user input needed close scanner
+		scanner.close();
+		
 		if(data !=null && !data.matches("")) {
 		if(data.contains(flag)) {
 			
@@ -73,10 +76,6 @@ public class BitStuffing {
 			System.out.println("Enter the data sequence : ");
 			data = scanner.nextLine();
 		}
-		
-		
-		// no more user input needed close scanner
-		scanner.close();
 		
 	}
 
