@@ -34,9 +34,9 @@ public class SocketServer {
 			localIP = localHost ;
 		}
 		
-		serverPort = scanner.nextInt();
+		serverPort = 6365;
 		
-		
+		System.out.println("Connect your client with port : " + serverPort);
 		if(serverPort !=0 && serverPort < 10000) {
 			// instantiate server on port
 				serverSocket = new ServerSocket(serverPort);
@@ -52,14 +52,21 @@ public class SocketServer {
 				InputStreamReader inR = new InputStreamReader(in);
 				// buffered reader to read socket pipe buffer (requires reader)
 				buff = new BufferedReader(inR);
-			
+				
 				DataOutputStream dos = new DataOutputStream(socketFromServer.getOutputStream());
+				
+				keepOnListening(dos);
 			
-			String clientMsg = buff.readLine();
-			
-			System.out.println(clientMsg);
+				
 		}
 
 	}
+
+	private static void keepOnListening(DataOutputStream dos) throws IOException {
+		// TODO Auto-generated method stub
+		String clientMsg = buff.readLine();
+		
+			dos.writeBytes("Message from server : " + clientMsg + " is processed \n");
+		}
 
 }
