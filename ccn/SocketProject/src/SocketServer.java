@@ -18,17 +18,25 @@ public class SocketServer {
 	private static Socket socketFromServer;
 	private static boolean serverSwitch = true;
 	private static BufferedReader buff;
+	private static String localHost = "http://localhost";
 
 	public static void main(String[] args) throws IOException {
 		
 		// TODO make use of this IP address to create socket in computer IP
-		Scanner scanner = new Scanner("Enter local IP (if u don't enter anything localhost will be used)");
+		
+		System.out.println("Enter local IP (if u don't enter anything localhost will be used) : ");
+		
+		final Scanner scanner = new Scanner(System.in);
 		
 		localIP = scanner.nextLine();
 		
-		if(localIP != null) {
-			serverPort = scanner.nextInt();
+		if(localIP == null) {
+			localIP = localHost ;
 		}
+		
+		serverPort = scanner.nextInt();
+		
+		
 		if(serverPort !=0 && serverPort < 10000) {
 			// instantiate server on port
 				serverSocket = new ServerSocket(serverPort);
