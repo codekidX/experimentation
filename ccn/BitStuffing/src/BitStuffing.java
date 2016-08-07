@@ -24,7 +24,7 @@ public class BitStuffing {
 		
 		if(!flag.matches("")) {
 			if(flag.matches("N") || flag.matches("n")) {
-				System.out.println("Using default flag");
+				System.out.println("Using default flag (0111110)");
 				flag = DEFAULT_FLAG;
 			}
 		} else {
@@ -58,7 +58,7 @@ public class BitStuffing {
 			if(flagData.contains(CONSECUTIVE_ONES)) {
 				startIndexOfContSeq = flagData.indexOf("11");
 				int whereToStuff = startIndex + startIndexOfContSeq + 1;
-				stuffedData = data.substring(0,whereToStuff) + "0" + data.substring(whereToStuff , dataLength);
+				stuffedData = data.substring(0,whereToStuff) + "|0|" + data.substring(whereToStuff , dataLength);
 				
 			} else {
 				//improvise
