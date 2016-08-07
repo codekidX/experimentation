@@ -63,6 +63,8 @@ public class BitStuffing {
 			} else {
 				//improvise
 				startIndexOfContSeq = flagData.indexOf(CONSECUTIVE_ZEROS);
+				int whereToStuff = startIndex + startIndexOfContSeq + 1;
+				stuffedData = data.substring(0,whereToStuff) + "|1|" + data.substring(whereToStuff , dataLength);
 			}
 			
 			System.out.println("Before stuffing: " + data);
