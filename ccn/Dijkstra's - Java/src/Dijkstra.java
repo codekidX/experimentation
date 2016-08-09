@@ -78,9 +78,9 @@ public class Dijkstra
 
         // set the edges and weight
         A.adjacencies = new Edge[]{ new Edge(B, 5), new Edge(D,10) };
-        B.adjacencies = new Edge[]{ new Edge(C, 20) };
-        C.adjacencies = new Edge[]{ new Edge(D, 2), new Edge(F,10) };
-        D.adjacencies = new Edge[]{ new Edge(E, 2) };
+        B.adjacencies = new Edge[]{ new Edge(C, 20), new Edge(A,5)};
+        C.adjacencies = new Edge[]{ new Edge(D, 2), new Edge(F,10), new Edge(B, 20) };
+        D.adjacencies = new Edge[]{ new Edge(E, 2), new Edge(C, 2), new Edge(A,10) };
         E.adjacencies = new Edge[]{ new Edge(F, 5), new Edge(D, 2) };
         F.adjacencies = new Edge[]{ new Edge(E,5), new Edge(C,10) };
 
