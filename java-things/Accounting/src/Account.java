@@ -53,7 +53,7 @@ public class Account {
 	
 	// if she really want to override
 	
-	// note there is 2 withdraw method.. infinite can be made unless the parameters passed is different
+	// note there are 2 withdraw method.. infinite can be made unless the parameters passed is different
 	boolean withdraw(int overDraftLimit) {
 		if(balance > overDraftLimit) {
 			// still not reached minimum balance
