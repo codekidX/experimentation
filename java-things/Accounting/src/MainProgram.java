@@ -3,6 +3,8 @@ public class MainProgram {
 	
 	static Account Kathy;
 	static Account Smith;
+	
+	static String whatsToStringsOP = "";
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,11 +29,14 @@ public class MainProgram {
 		// 3.1 d
 		System.out.println("Smith's balance : " + Smith.getBalance());
 		System.out.println("Kathy's balance : " + Kathy.getBalance());
+		
+		System.out.println("toString : " + whatsToStringsOP);
 	}
 
 	// 3.1 e
 	@Override
 	public String toString() {
+		whatsToStringsOP = "MainProgram [toString()=" + super.toString() + "]";
 		return "MainProgram [toString()=" + super.toString() + "]";
 	}
 	
