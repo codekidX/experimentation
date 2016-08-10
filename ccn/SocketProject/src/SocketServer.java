@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class SocketServer {
+public class SocketServer implements Runnable {
 	
 	// address and port
 	private static String localIP = null;
@@ -20,7 +20,7 @@ public class SocketServer {
 	private static BufferedReader buff;
 	private static String localHost = "http://localhost";
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  throws IOException {
 		
 		// TODO make use of this IP address to create socket in computer IP
 		
@@ -68,5 +68,11 @@ public class SocketServer {
 		
 			dos.writeBytes("Message from server : " + clientMsg + " is processed \n");
 		}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
