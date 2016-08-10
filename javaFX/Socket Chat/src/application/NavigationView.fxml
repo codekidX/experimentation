@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 1" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 2" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 3" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 4" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 5" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 6" />
+      <JFXButton prefHeight="45.0" prefWidth="190.0" text="Option 7" />
+   </children>
+</VBox>

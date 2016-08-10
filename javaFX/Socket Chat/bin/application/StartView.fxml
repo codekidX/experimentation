@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXToolbar fx:id="toolbar" layoutY="-2.0" prefHeight="55.0" prefWidth="700.0" style="-fx-background-color: #1976D2;">
+         <left>
+            <JFXHamburger fx:id="hamButton" prefHeight="55.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+         </left>
+      </JFXToolbar>
+      <JFXDrawer fx:id="navDrawer" defaultDrawerSize="190.0" layoutY="52.0" maxWidth="190.0" minWidth="190.0" prefHeight="347.0" prefWidth="190.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>
