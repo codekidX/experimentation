@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class SocketServer implements Runnable {
+public class SocketServer {
 	
 	// address and port
 	private static String localIP = null;
@@ -34,7 +34,7 @@ public class SocketServer implements Runnable {
 			localIP = localHost ;
 		}
 		
-		serverPort = 6365;
+		serverPort = 6065;
 		
 		System.out.println("Connect your client with port : " + serverPort);
 		if(serverPort !=0 && serverPort < 10000) {
@@ -42,10 +42,10 @@ public class SocketServer implements Runnable {
 				serverSocket = new ServerSocket(serverPort);
 		}
 		
+	    // accept socket data from client
+		socketFromServer = serverSocket.accept();
+		
 		while(serverSwitch) {
-			
-			    // accept socket data from client
-				socketFromServer = serverSocket.accept();
 			
 				// get pipe stream from socket
 				InputStream in = socketFromServer.getInputStream();
@@ -66,13 +66,13 @@ public class SocketServer implements Runnable {
 		// TODO Auto-generated method stub
 		String clientMsg = buff.readLine();
 		
-			dos.writeBytes("Message from server : " + clientMsg + " is processed \n");
+			if(clientMsg.equals("bye")) {
+				System.out.println("Server CLOSED !!");
+				serverSocket.close();
+				dos.writeBytes("Bye Client");
+			} else {
+				dos.writeBytes("Reply from server : " + clientMsg + " is processed \n");
+			}
 		}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

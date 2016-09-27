@@ -11,7 +11,7 @@ public class SocketClient {
 	
 	private static Socket mSocket;
 	private static String host = "localhost";
-	private static int serverPort = 6365;
+	private static int serverPort = 6065;
 	private static boolean clientSwitch = true;
 	
 	private static String serverMsg = "";
@@ -39,7 +39,12 @@ public class SocketClient {
 			dos.writeChars(msg + "\n");
 			
 			serverMsg = buff.readLine();
-			System.out.println(serverMsg);
+			if(serverMsg.equals("Bye Client")) {
+				mSocket.close();
+				System.out.println("Server said bye so I'm also going");
+			} else {
+				System.out.println(serverMsg);
+			}
 			
 			
 		}

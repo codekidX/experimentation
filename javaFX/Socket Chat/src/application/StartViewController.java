@@ -66,9 +66,6 @@ public class StartViewController implements Initializable {
 			
 		});
 		
-		// toolbar related code
-		// f**ck it
-		
 		
 	}
 
